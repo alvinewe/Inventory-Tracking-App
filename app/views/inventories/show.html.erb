@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @inventory.name %>
+</p>
+
+<p>
+  <b>Quantity:</b>
+  <%= @inventory.quantity %>
+</p>
+
+<p>
+  <b>Cost price:</b>
+  <%= @inventory.cost_price %>
+</p>
+
+<p>
+  <b>Supplier:</b>
+  <%= @inventory.supplier %>
+</p>
+
+<p>
+  <b>Purchased at:</b>
+  <%= @inventory.purchased_at %>
+</p>
+
+<p>
+  <b>Received at:</b>
+  <%= @inventory.received_at %>
+</p>
+
+<p>
+  <b>Exchange rate:</b>
+  <%= @inventory.exchange_rate %>
+</p>
+
+
+<%= link_to 'Edit', edit_inventory_path(@inventory) %> |
+<%= link_to 'Back', inventories_path %>
