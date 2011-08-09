@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Cust name:</b>
+  <%= @order.cust_name %>
+</p>
+
+<p>
+  <b>Cust contact no:</b>
+  <%= @order.cust_contact_no %>
+</p>
+
+<p>
+  <b>Cust address:</b>
+  <%= @order.cust_address %>
+</p>
+
+<p>
+  <b>Post paid:</b>
+  <%= @order.post_paid %>
+</p>
+
+<p>
+  <b>Post cost:</b>
+  <%= @order.post_cost %>
+</p>
+
+<p>
+  <b>Post diff:</b>
+  <%= @order.post_diff %>
+</p>
+
+
+<%= link_to 'Edit', edit_order_path(@order) %> |
+<%= link_to 'Back', orders_path %>

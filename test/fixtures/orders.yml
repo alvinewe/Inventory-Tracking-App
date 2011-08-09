@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  cust_name: MyString
+  cust_contact_no: MyString
+  cust_address: MyString
+  post_paid: 9.99
+  post_cost: 9.99
+  post_diff: 9.99
+
+two:
+  cust_name: MyString
+  cust_contact_no: MyString
+  cust_address: MyString
+  post_paid: 9.99
+  post_cost: 9.99
+  post_diff: 9.99
