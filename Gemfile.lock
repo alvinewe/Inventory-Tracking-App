@@ -1,3 +1,9 @@
+GIT
+  remote: git://github.com/paneq/calendar_date_select.git
+  revision: 977048211b94599fe0f08eb37a481f3d69df48f6
+  specs:
+    calendar_date_select (1.16.2)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -72,5 +78,6 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
+  calendar_date_select!
   rails (= 3.0.9)
   sqlite3
