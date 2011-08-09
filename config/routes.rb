@@ -1,7 +1,10 @@
 InventoryTrackingApp::Application.routes.draw do
-  resources :orders
-
+  
   resources :inventories
+  
+  resources :orders do
+    resources :line_items
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

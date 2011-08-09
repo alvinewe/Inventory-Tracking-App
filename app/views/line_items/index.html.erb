@@ -1,0 +1,29 @@
+<h1>Listing line_items</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Quantity</th>
+    <th>Price</th>
+    <th>Custom price</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @line_items.each do |line_item| %>
+  <tr>
+    <td><%= line_item.name %></td>
+    <td><%= line_item.quantity %></td>
+    <td><%= line_item.price %></td>
+    <td><%= line_item.custom_price %></td>
+    <td><%= link_to 'Show', order_line_item_path(@order, line_item) %></td>
+    <td><%= link_to 'Edit', edit_order_line_item_path(@order, line_item) %></td>
+    <td><%= link_to 'Destroy', order_line_item_path(@order, line_item), :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Line item', new_order_line_item_path %>
