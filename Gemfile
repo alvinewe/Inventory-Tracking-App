@@ -6,6 +6,7 @@ gem 'rails', '3.0.9'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
+gem 'devise'
 gem 'calendar_date_select', :git => 'git://github.com/paneq/calendar_date_select.git'
 
 # Use unicorn as the web server
