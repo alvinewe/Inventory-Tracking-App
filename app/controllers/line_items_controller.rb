@@ -1,6 +1,6 @@
 class LineItemsController < ApplicationController
   
-  before_filter :get_order
+  before_filter :get_order, :only => [:index,:create,:new]
   
   # GET /line_items
   # GET /line_items.xml
@@ -16,7 +16,7 @@ class LineItemsController < ApplicationController
   # GET /line_items/1
   # GET /line_items/1.xml
   def show
-    @line_item = @order.line_items.find(params[:id])
+    @line_item = LineItem.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -37,7 +37,7 @@ class LineItemsController < ApplicationController
 
   # GET /line_items/1/edit
   def edit
-    @line_item = @order.line_items.find(params[:id])
+    @line_item = LineItem.find(params[:id])
   end
 
   # POST /line_items
@@ -47,7 +47,7 @@ class LineItemsController < ApplicationController
 
     respond_to do |format|
       if @line_item.save
-        format.html { redirect_to(order_line_item_path(@order, @line_item), :notice => 'Line item was successfully created.') }
+        format.html { redirect_to(orders_url, :notice => 'Line item was successfully created.') }
         format.xml  { render :xml => @line_item, :status => :created, :location => @line_item }
       else
         format.html { render :action => "new" }
@@ -59,11 +59,11 @@ class LineItemsController < ApplicationController
   # PUT /line_items/1
   # PUT /line_items/1.xml
   def update
-    @line_item = @order.line_items.find(params[:id])
+    @line_item = LineItem.find(params[:id])
 
     respond_to do |format|
       if @line_item.update_attributes(params[:line_item])
-        format.html { redirect_to(order_line_item_path(@order, @line_item), :notice => 'Line item was successfully updated.') }
+        format.html { redirect_to(@line_item, :notice => 'Line item was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -75,11 +75,11 @@ class LineItemsController < ApplicationController
   # DELETE /line_items/1
   # DELETE /line_items/1.xml
   def destroy
-    @line_item = @order.line_items.find(params[:id])
+    @line_item = LineItem.find(params[:id])
     @line_item.destroy
 
     respond_to do |format|
-      format.html { redirect_to(order_line_items_url(@order)) }
+      format.html { redirect_to(orders_url) }
       format.xml  { head :ok }
     end
   end

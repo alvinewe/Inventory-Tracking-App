@@ -2,7 +2,7 @@ InventoryTrackingApp::Application.routes.draw do
   
   resources :inventories
   
-  resources :orders do
+  resources :orders, :shallow => true do
     resources :line_items
   end
 

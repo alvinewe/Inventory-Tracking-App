@@ -17,9 +17,9 @@
     <td><%= line_item.quantity %></td>
     <td><%= line_item.price %></td>
     <td><%= line_item.custom_price %></td>
-    <td><%= link_to 'Show', order_line_item_path(@order, line_item) %></td>
-    <td><%= link_to 'Edit', edit_order_line_item_path(@order, line_item) %></td>
-    <td><%= link_to 'Destroy', order_line_item_path(@order, line_item), :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Show', line_item %></td>
+    <td><%= link_to 'Edit', edit_line_item_path(line_item) %></td>
+    <td><%= link_to 'Destroy', line_item, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
