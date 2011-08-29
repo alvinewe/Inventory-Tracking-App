@@ -46,4 +46,7 @@ InventoryTrackingApp::Application.configure do
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
+  
+  # Required by devise
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 end
