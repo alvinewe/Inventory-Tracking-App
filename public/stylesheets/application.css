@@ -1,0 +1,15 @@
+#nav_links {
+	margin-left: 0px;
+}
+#nav_links ul {
+	/*width: 500px;*/
+	margin: 0px auto;
+	padding: 0px;
+}
+#nav_links li {
+	display: inline;
+	float: left;
+	/*width: 100px;*/
+	margin-right: 10px;
+	text-align: center;
+}
