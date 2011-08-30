@@ -34,13 +34,13 @@ ActiveRecord::Schema.define(:version => 20110830055424) do
   create_table "line_items", :force => true do |t|
     t.integer  "product_id"
     t.integer  "order_id"
-    t.integer  "quantity"
+    t.integer  "quantity",   :default => 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "orders", :force => true do |t|
-    t.decimal  "postage",    :precision => 10, :scale => 0
+    t.decimal  "postage",    :precision => 10, :scale => 2
     t.string   "status"
     t.string   "add_note"
     t.integer  "user_id"
@@ -51,8 +51,8 @@ ActiveRecord::Schema.define(:version => 20110830055424) do
   create_table "payments", :force => true do |t|
     t.integer  "order_id"
     t.string   "payment_type"
-    t.decimal  "postage",      :precision => 10, :scale => 0
-    t.decimal  "total",        :precision => 10, :scale => 0
+    t.decimal  "postage",      :precision => 10, :scale => 2
+    t.decimal  "total",        :precision => 10, :scale => 2
     t.string   "ibank_ref"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -60,10 +60,10 @@ ActiveRecord::Schema.define(:version => 20110830055424) do
 
   create_table "products", :force => true do |t|
     t.string   "desc"
-    t.integer  "quantity"
-    t.decimal  "price_usd",     :precision => 10, :scale => 0
-    t.decimal  "price_sgd",     :precision => 10, :scale => 0
-    t.decimal  "exchange_rate", :precision => 10, :scale => 0
+    t.integer  "quantity",                                     :default => 0
+    t.decimal  "price_usd",     :precision => 10, :scale => 2
+    t.decimal  "price_sgd",     :precision => 10, :scale => 2
+    t.decimal  "exchange_rate", :precision => 10, :scale => 2
     t.datetime "payment_date"
     t.datetime "order_date"
     t.datetime "received_date"

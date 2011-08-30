@@ -4,7 +4,7 @@ class InventoriesController < ApplicationController
   # GET /inventories
   # GET /inventories.xml
   def index
-    @inventories = Inventory.all
+    @inventories = Inventory.where(:user_id => current_user.id)
 
     respond_to do |format|
       format.html # index.html.erb

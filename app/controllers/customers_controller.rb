@@ -4,7 +4,7 @@ class CustomersController < ApplicationController
   # GET /customers
   # GET /customers.xml
   def index
-    @customers = Customer.all
+    @customers = Customer.where(:user_id => current_user.id)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -43,7 +43,7 @@ class CustomersController < ApplicationController
   # POST /customers.xml
   def create
     @customer = Customer.new(params[:customer])
-
+    @customer.user_id = current_user.id
     respond_to do |format|
       if @customer.save
         format.html { redirect_to(@customer, :notice => 'Customer was successfully created.') }

@@ -43,6 +43,7 @@ class OrdersController < ApplicationController
   # POST /orders.xml
   def create
     @order = Order.new(params[:order])
+    @order.user_id = current_user.id
 
     respond_to do |format|
       if @order.save

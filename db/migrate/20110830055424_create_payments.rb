@@ -3,8 +3,8 @@ class CreatePayments < ActiveRecord::Migration
     create_table :payments do |t|
       t.integer :order_id
       t.string :payment_type
-      t.decimal :postage
-      t.decimal :total
+      t.decimal :postage, :precision => 10, :scale => 2
+      t.decimal :total, :precision => 10, :scale => 2
       t.string :ibank_ref
 
       t.timestamps
