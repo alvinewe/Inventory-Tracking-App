@@ -4,7 +4,7 @@ class OrdersController < ApplicationController
   # GET /orders
   # GET /orders.xml
   def index
-    @orders = Order.all
+    @orders = Order.where(:user_id => current_user.id)
 
     respond_to do |format|
       format.html # index.html.erb

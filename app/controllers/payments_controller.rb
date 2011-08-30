@@ -4,7 +4,7 @@ class PaymentsController < ApplicationController
   # GET /payments
   # GET /payments.xml
   def index
-    @payments = Payment.all
+    @payments = Payment.includes([:order]).where('orders.user_id' => current_user.id)
 
     respond_to do |format|
       format.html # index.html.erb
