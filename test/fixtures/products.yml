@@ -1,0 +1,25 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  desc: MyString
+  quantity: 1
+  price_usd: 9.99
+  price_sgd: 9.99
+  exchange_rate: 9.99
+  payment_date: 2011-08-29 16:25:56
+  order_date: 2011-08-29 16:25:56
+  received_date: 2011-08-29 16:25:56
+  add_note: MyString
+  inventory_id: 1
+
+two:
+  desc: MyString
+  quantity: 1
+  price_usd: 9.99
+  price_sgd: 9.99
+  exchange_rate: 9.99
+  payment_date: 2011-08-29 16:25:56
+  order_date: 2011-08-29 16:25:56
+  received_date: 2011-08-29 16:25:56
+  add_note: MyString
+  inventory_id: 1

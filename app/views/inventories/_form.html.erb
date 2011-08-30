@@ -15,6 +15,9 @@
     <%= f.label :inventory_type %><br />
     <%= f.text_field :inventory_type %>
   </div>
+  <%# f.fields_for :products do |builder| %>
+    <%#= render "products_fields", :f => builder %>
+  <%# end %>
   <div class="actions">
     <%= f.submit %>
   </div>

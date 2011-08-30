@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Desc:</b>
+  <%= @product.desc %>
+</p>
+
+<p>
+  <b>Quantity:</b>
+  <%= @product.quantity %>
+</p>
+
+<p>
+  <b>Price usd:</b>
+  <%= @product.price_usd %>
+</p>
+
+<p>
+  <b>Price sgd:</b>
+  <%= @product.price_sgd %>
+</p>
+
+<p>
+  <b>Exchange rate:</b>
+  <%= @product.exchange_rate %>
+</p>
+
+<p>
+  <b>Payment date:</b>
+  <%= @product.payment_date %>
+</p>
+
+<p>
+  <b>Order date:</b>
+  <%= @product.order_date %>
+</p>
+
+<p>
+  <b>Received date:</b>
+  <%= @product.received_date %>
+</p>
+
+<p>
+  <b>Add note:</b>
+  <%= @product.add_note %>
+</p>
+
+<p>
+  <b>Inventory:</b>
+  <%= @product.inventory_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_product_path %> |
+<%= link_to 'Back', inventory_products_path(@product.inventory) %>

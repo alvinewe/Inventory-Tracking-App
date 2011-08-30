@@ -10,11 +10,26 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110829065230) do
+ActiveRecord::Schema.define(:version => 20110829082555) do
 
   create_table "inventories", :force => true do |t|
     t.string   "inventory_type"
     t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "products", :force => true do |t|
+    t.string   "desc"
+    t.integer  "quantity"
+    t.decimal  "price_usd",     :precision => 10, :scale => 0
+    t.decimal  "price_sgd",     :precision => 10, :scale => 0
+    t.decimal  "exchange_rate", :precision => 10, :scale => 0
+    t.datetime "payment_date"
+    t.datetime "order_date"
+    t.datetime "received_date"
+    t.string   "add_note"
+    t.integer  "inventory_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

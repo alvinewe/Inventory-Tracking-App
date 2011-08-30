@@ -4,6 +4,10 @@
   <b>Inventory Type:</b>
   <%= @inventory.inventory_type %>
 </p>
+<p>
+  <%= link_to pluralize(@inventory.products.size, 'product'), inventory_products_path(@inventory) %>
+</p>
+
 
 <%= link_to 'Edit', edit_inventory_path(@inventory) %> |
 <%= link_to 'Back', inventories_path %>

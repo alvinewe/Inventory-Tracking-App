@@ -1,6 +1,10 @@
 InventoryTrackingApp::Application.routes.draw do
+
+  resources :inventories, :shallow => true do
+    resources :products
+  end
   
-  resources :inventories
+  resources :products, :only => [:index]
 
   devise_for :users
 

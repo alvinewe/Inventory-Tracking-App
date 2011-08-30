@@ -27,7 +27,9 @@ class InventoriesController < ApplicationController
   # GET /inventories/new.xml
   def new
     @inventory = Inventory.new
-
+    #5.times {
+    #  @inventory.products.build
+    #}
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @inventory }

@@ -1,0 +1,42 @@
+<h1>Listing products</h1>
+
+<table>
+  <tr>
+    <th>Desc</th>
+    <th>Quantity</th>
+    <th>Price usd</th>
+    <th>Price sgd</th>
+    <th>Exchange rate</th>
+    <th>Payment date</th>
+    <th>Order date</th>
+    <th>Received date</th>
+    <th>Add note</th>
+    <th>Inventory</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @products.each do |product| %>
+  <tr>
+    <td><%= product.desc %></td>
+    <td><%= product.quantity %></td>
+    <td><%= product.price_usd %></td>
+    <td><%= product.price_sgd %></td>
+    <td><%= product.exchange_rate %></td>
+    <td><%= product.payment_date %></td>
+    <td><%= product.order_date %></td>
+    <td><%= product.received_date %></td>
+    <td><%= product.add_note %></td>
+    <td><%= product.inventory_id %></td>
+    <td><%= link_to 'Show', product %></td>
+    <td><%= link_to 'Edit', edit_product_path(product) %></td>
+    <td><%= link_to 'Destroy', product, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Product', new_inventory_product_path %> |
+<%= link_to 'Back', @inventory %>
