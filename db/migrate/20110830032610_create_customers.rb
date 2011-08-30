@@ -7,6 +7,7 @@ class CreateCustomers < ActiveRecord::Migration
       t.string :mailing_add
       t.string :post_code
       t.string :ibank_nick
+      t.integer :user_id
 
       t.timestamps
     end

@@ -1,5 +1,11 @@
 InventoryTrackingApp::Application.routes.draw do
 
+  resources :payments
+
+  resources :line_items
+
+  resources :orders
+
   resources :customers
 
   resources :inventories, :shallow => true do

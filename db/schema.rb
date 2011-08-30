@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110830032610) do
+ActiveRecord::Schema.define(:version => 20110830055424) do
 
   create_table "customers", :force => true do |t|
     t.string   "name"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(:version => 20110830032610) do
     t.string   "mailing_add"
     t.string   "post_code"
     t.string   "ibank_nick"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -26,6 +27,33 @@ ActiveRecord::Schema.define(:version => 20110830032610) do
   create_table "inventories", :force => true do |t|
     t.string   "inventory_type"
     t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "line_items", :force => true do |t|
+    t.integer  "product_id"
+    t.integer  "order_id"
+    t.integer  "quantity"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "orders", :force => true do |t|
+    t.decimal  "postage",    :precision => 10, :scale => 0
+    t.string   "status"
+    t.string   "add_note"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "payments", :force => true do |t|
+    t.integer  "order_id"
+    t.string   "payment_type"
+    t.decimal  "postage",      :precision => 10, :scale => 0
+    t.decimal  "total",        :precision => 10, :scale => 0
+    t.string   "ibank_ref"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

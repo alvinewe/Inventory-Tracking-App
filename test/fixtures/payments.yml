@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  order_id: 1
+  payment_type: MyString
+  postage: 9.99
+  total: 9.99
+  ibank_ref: MyString
+
+two:
+  order_id: 1
+  payment_type: MyString
+  postage: 9.99
+  total: 9.99
+  ibank_ref: MyString

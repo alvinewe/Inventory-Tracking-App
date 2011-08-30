@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  postage: 9.99
+  status: MyString
+  add_note: MyString
+
+two:
+  postage: 9.99
+  status: MyString
+  add_note: MyString

@@ -13,13 +13,19 @@
 				<li>
 					<%= link_to "Home", root_path %>
 				</li>
+        <% if user_signed_in? %>
 				<li>
 					<%= link_to "Inventories", inventories_path %>
         </li>
         <li>
 					<%= link_to "Customers", customers_path %>
         </li>
-				<% if user_signed_in? %>
+        <li>
+					<%= link_to "Orders", orders_path %>
+        </li>
+        <li>
+					<%= link_to "Payments", payments_path %>
+        </li>
 				<li>
           <%= link_to "Profile", root_path %>
         </li>

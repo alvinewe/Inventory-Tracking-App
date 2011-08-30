@@ -1,0 +1,31 @@
+<h1>Listing payments</h1>
+
+<table>
+  <tr>
+    <th>Order</th>
+    <th>Payment type</th>
+    <th>Postage</th>
+    <th>Total</th>
+    <th>Ibank ref</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @payments.each do |payment| %>
+  <tr>
+    <td><%= payment.order_id %></td>
+    <td><%= payment.payment_type %></td>
+    <td><%= payment.postage %></td>
+    <td><%= payment.total %></td>
+    <td><%= payment.ibank_ref %></td>
+    <td><%= link_to 'Show', payment %></td>
+    <td><%= link_to 'Edit', edit_payment_path(payment) %></td>
+    <td><%= link_to 'Destroy', payment, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Payment', new_payment_path %>
