@@ -10,7 +10,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110829082555) do
+ActiveRecord::Schema.define(:version => 20110830032610) do
+
+  create_table "customers", :force => true do |t|
+    t.string   "name"
+    t.string   "contact_no"
+    t.string   "email"
+    t.string   "mailing_add"
+    t.string   "post_code"
+    t.string   "ibank_nick"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "inventories", :force => true do |t|
     t.string   "inventory_type"

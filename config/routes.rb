@@ -1,5 +1,7 @@
 InventoryTrackingApp::Application.routes.draw do
 
+  resources :customers
+
   resources :inventories, :shallow => true do
     resources :products
   end

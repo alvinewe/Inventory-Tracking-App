@@ -1,0 +1,33 @@
+<h1>Listing customers</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Contact no</th>
+    <th>Email</th>
+    <th>Mailing add</th>
+    <th>Post code</th>
+    <th>Ibank nick</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @customers.each do |customer| %>
+  <tr>
+    <td><%= customer.name %></td>
+    <td><%= customer.contact_no %></td>
+    <td><%= customer.email %></td>
+    <td><%= customer.mailing_add %></td>
+    <td><%= customer.post_code %></td>
+    <td><%= customer.ibank_nick %></td>
+    <td><%= link_to 'Show', customer %></td>
+    <td><%= link_to 'Edit', edit_customer_path(customer) %></td>
+    <td><%= link_to 'Destroy', customer, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Customer', new_customer_path %>
